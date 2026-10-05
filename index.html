@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#151515">
+<title>STYL’D & POLISHED BY NINA | Rewards</title>
+<style>
+:root{
+ --ink:#171717; --muted:#6d6a68; --cream:#faf7f2; --paper:#fff;
+ --gold:#b18a4a; --gold2:#d6b36a; --line:#e9e1d7; --soft:#f3ede5;
+ --green:#527a62; --red:#9b4d4d; --shadow:0 18px 50px rgba(30,20,10,.08);
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink)}
+button,input,select{font:inherit} button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-family:Georgia,serif;letter-spacing:.08em;font-size:15px;font-weight:700}.brand small{display:block;font:10px Inter,sans-serif;letter-spacing:.24em;color:var(--gold);margin-top:3px}
+.navlinks{display:flex;gap:8px}.navlinks button{border:0;background:transparent;padding:9px 12px;border-radius:20px}.navlinks button.active{background:var(--ink);color:#fff}
+.wrap{max-width:1180px;margin:auto;padding:38px 22px 70px}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:25px;align-items:stretch;margin-bottom:25px}
+.heroMain{padding:48px;border-radius:28px;background:linear-gradient(135deg,#171717,#2b2722);color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.heroMain:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(214,179,106,.35);border-radius:50%;right:-100px;top:-120px}
+.eyebrow{color:var(--gold2);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,72px);line-height:.95;margin:15px 0}.hero p{color:#d7d1c8;max-width:620px;line-height:1.7}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:12px;padding:12px 17px;font-weight:700}.btn.light{background:#fff;color:var(--ink);border-color:#fff}.btn.outline{background:transparent;color:inherit;border-color:currentColor}.btn.gold{background:var(--gold);border-color:var(--gold)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 30px rgba(30,20,10,.04)}
+.spot{padding:28px;display:flex;flex-direction:column;justify-content:space-between}.spot strong{font:32px Georgia,serif}.spot .ring{width:120px;height:120px;border-radius:50%;border:9px solid var(--gold2);display:grid;place-items:center;margin:10px auto 22px;font:26px Georgia,serif}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:20px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:28px;margin-top:8px}
+.section{margin-top:25px}.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:13px}.section h2{font:30px Georgia,serif;margin:0}.muted{color:var(--muted)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.tier{padding:24px;position:relative;overflow:hidden}.tier h3{font:25px Georgia,serif;margin:5px 0}.tier .discount{font-size:35px;font-weight:800}.tier.silver{border-top:4px solid #a9aaad}.tier.platinum{border-top:4px solid #8d92a4}.tier.gold{border-top:4px solid var(--gold)}
+.rules{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.rule{padding:18px}.num{font-size:11px;letter-spacing:.12em;color:var(--gold);font-weight:800}.rule h3{font-size:15px;margin:8px 0}.rule p{font-size:13px;line-height:1.55;color:var(--muted)}
+.notice{padding:14px 16px;border-radius:12px;background:var(--soft);font-size:13px;color:#514b45;line-height:1.55}
+.panel{display:none}.panel.active{display:block}
+.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}.field input,.field select{width:100%;border:1px solid var(--line);padding:12px;border-radius:10px;background:#fff}.field.full{grid-column:1/-1}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.toolbar input{flex:1;min-width:200px;border:1px solid var(--line);padding:12px;border-radius:10px}
+.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}.table th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.badge{display:inline-flex;padding:5px 9px;border-radius:999px;background:var(--soft);font-size:11px;font-weight:800}.badge.gold{background:#f1e4c9}.badge.platinum{background:#e8e9ef}.badge.silver{background:#ececec}
+.adminTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.adminTop h2{margin:0;font:30px Georgia,serif}.smallbtn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:9px}
+.empty{text-align:center;padding:30px;color:var(--muted)}
+footer{padding:35px 22px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px}
+.toast{position:fixed;right:18px;bottom:18px;background:var(--ink);color:#fff;padding:13px 16px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:50}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.rules{grid-template-columns:repeat(2,1fr)}.tiers{grid-template-columns:1fr}.heroMain{padding:34px}.navlinks button{padding:8px}.navin{align-items:flex-start}.formgrid{grid-template-columns:1fr}}
+@media(max-width:520px){.grid4{grid-template-columns:1fr 1fr}.rules{grid-template-columns:1fr}.wrap{padding:25px 15px 55px}.heroMain{padding:28px}.heroMain h1{font-size:45px}.navlinks{overflow:auto;max-width:65vw}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="navin">
+  <a class="brand" href="#home">STYL’D & POLISHED BY NINA<small>REWARDS • NAIROBI</small></a>
+  <div class="navlinks">
+    <button class="active" data-tab="home">Rewards</button>
+    <button data-tab="lookup">My Points</button>
+    <button data-tab="admin">Admin</button>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<section id="home" class="panel active">
+ <div class="hero">
+  <div class="heroMain">
+   <div class="eyebrow">The STYL’D Rewards Club</div>
+   <h1>Spend. Earn.<br>Get polished.</h1>
+   <p>Every <b>KSh 100</b> spent earns <b>1 reward point</b>. Move through Silver, Platinum and Gold status and unlock bigger nail-service savings.</p>
+   <div class="cta"><a class="btn gold" href="#lookup">Check my points</a><a class="btn outline" id="bookBtn" href="#" target="_blank">Book an appointment</a></div>
+  </div>
+  <div class="card spot"><div><span class="muted">YOUR REWARD JOURNEY</span><div class="ring">1<br><small style="font-size:11px">POINT / KSh100</small></div></div><div><strong>Up to 30% off</strong><p class="muted">on nail appointments at Gold status.</p></div></div>
+ </div>
+ <div class="grid4">
+  <div class="card stat"><span>Silver</span><strong>10%</strong><small>0–499 points</small></div>
+  <div class="card stat"><span>Platinum</span><strong>20%</strong><small>500–999 points</small></div>
+  <div class="card stat"><span>Gold</span><strong>30%</strong><small>1,000+ points</small></div>
+  <div class="card stat"><span>Referral</span><strong>2×</strong><small>referrer earns referred points</small></div>
+ </div>
+ <div class="section">
+  <div class="sectionHead"><h2>Membership tiers</h2></div>
+  <div class="tiers">
+   <div class="card tier silver"><span class="badge silver">0–499 POINTS</span><h3>Silver</h3><div class="discount">10% OFF</div><p class="muted">Nail services</p></div>
+   <div class="card tier platinum"><span class="badge platinum">500–999 POINTS</span><h3>Platinum</h3><div class="discount">20% OFF</div><p class="muted">Nail services</p></div>
+   <div class="card tier gold"><span class="badge gold">1,000+ POINTS</span><h3>Gold</h3><div class="discount">30% OFF</div><p class="muted">Nail appointments</p></div>
+  </div>
+ </div>
+ <div class="section">
+  <div class="sectionHead"><h2>How it works</h2></div>
+  <div class="rules">
+   <div class="card rule"><div class="num">01 / SPEND</div><h3>KSh 100 = 1 point</h3><p>Points are based on qualifying spend recorded by the salon.</p></div>
+   <div class="card rule"><div class="num">02 / REFER</div><h3>Earn 2× the referral points</h3><p>When your referred client earns points, you receive double those points.</p></div>
+   <div class="card rule"><div class="num">03 / REBOOK</div><h3>+100 points</h3><p>Book your next appointment before leaving and show up for the service.</p></div>
+   <div class="card rule"><div class="num">04 / CELEBRATE</div><h3>15% off</h3><p>Birthday, wedding and special-occasion discount, subject to salon terms.</p></div>
+   <div class="card rule"><div class="num">05 / YEAR-END</div><h3>Top 5 rewards</h3><p>50%, 40%, 30%, 20% and 10% off for the five highest spenders.</p></div>
+  </div>
+ </div>
+ <div class="section"><div class="notice"><b>Year-end leaderboard:</b> ranking is based on total qualifying spend during the calendar year. The annual discount is a separate recognition reward and does not replace a member's normal tier.</div></div>
+</section>
+
+<section id="lookup" class="panel">
+ <div class="card" style="padding:26px">
+  <div class="sectionHead"><div><h2>Check your rewards</h2><p class="muted">Enter your phone number to see your current points and tier.</p></div></div>
+  <div class="toolbar"><input id="lookupPhone" placeholder="e.g. 0712 345 678"><button class="btn" onclick="lookupClient()">Check points</button></div>
+  <div id="lookupResult"></div>
+ </div>
+</section>
+
+<section id="admin" class="panel">
+ <div class="adminTop"><h2>Rewards admin</h2><button class="smallbtn" onclick="exportCSV()">Export CSV</button></div>
+ <div class="card" style="padding:22px">
+  <div class="notice" style="margin-bottom:18px"><b>Demo / local mode:</b> this version stores records in this browser using local storage. For a live multi-staff system, connect the same interface to a database/API. The rules are already built into the calculator.</div>
+  <div class="formgrid">
+   <div class="field"><label>Client name</label><input id="cName" placeholder="Full name"></div>
+   <div class="field"><label>Phone number</label><input id="cPhone" placeholder="0712 345 678"></div>
+   <div class="field"><label>Amount spent (KSh)</label><input id="cSpend" type="number" min="0" placeholder="e.g. 5000"></div>
+   <div class="field"><label>Referral phone (optional)</label><input id="cRef" placeholder="Phone of referring client"></div>
+   <div class="field"><label>Birthday (optional)</label><input id="cBirthday" type="date"></div>
+   <div class="field"><label>Next booking shown & kept</label><select id="cRebook"><option value="0">No</option><option value="1">Yes — award 100 points after show-up</option></select></div>
+   <div class="field full"><button class="btn" onclick="addClient()">Add / update client</button></div>
+  </div>
+ </div>
+ <div class="grid4" style="margin-top:15px">
+  <div class="card stat"><span>Clients</span><strong id="totalClients">0</strong></div>
+  <div class="card stat"><span>Total points</span><strong id="totalPoints">0</strong></div>
+  <div class="card stat"><span>Top spender</span><strong id="topSpend">KSh 0</strong></div>
+  <div class="card stat"><span>Gold members</span><strong id="goldCount">0</strong></div>
+ </div>
+ <div class="card" style="padding:22px;margin-top:15px">
+  <div class="toolbar"><input id="searchClients" oninput="renderAdmin()" placeholder="Search name or phone..."><button class="smallbtn" onclick="seedDemo()">Load demo data</button><button class="smallbtn" onclick="clearAll()">Clear all</button></div>
+  <div class="tablewrap"><table class="table"><thead><tr><th>Client</th><th>Phone</th><th>Spend</th><th>Points</th><th>Tier</th><th>Referral</th><th>Actions</th></tr></thead><tbody id="clientRows"></tbody></table></div>
+ </div>
+ <div class="card" style="padding:22px;margin-top:15px">
+  <h3 style="margin-top:0">Year-end top 5</h3><div id="leaderboard"></div>
+ </div>
+</section>
+</main>
+<footer>© <span id="year"></span> STYL’D & POLISHED BY NINA • Nairobi, Kenya<br><span>Rewards portal • Terms subject to salon policy</span></footer>
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+const BOOKING_URL = window.BOOKING_URL || "https://www.picktime.com/home/styldnpolishedbyninaappointmentbookings";
+document.getElementById("bookBtn").href = BOOKING_URL;
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const KEY="styld_rewards_v1";
+let clients=JSON.parse(localStorage.getItem(KEY)||"[]");
+
+function save(){localStorage.setItem(KEY,JSON.stringify(clients));renderAdmin()}
+function norm(p){return (p||"").replace(/\D/g,"").slice(-9)}
+function pointsForSpend(spend){return Math.floor(Number(spend||0)/100)}
+function tierFor(points){
+ if(points>=1000)return {name:"Gold",discount:30,cls:"gold"};
+ if(points>=500)return {name:"Platinum",discount:20,cls:"platinum"};
+ return {name:"Silver",discount:10,cls:"silver"};
+}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2400)}
+function tab(id){
+ document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll(".navlinks button").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".navlinks button").forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+document.querySelectorAll('a[href="#lookup"]').forEach(a=>a.onclick=()=>tab("lookup"));
+
+function addClient(){
+ const name=document.getElementById("cName").value.trim(), phone=document.getElementById("cPhone").value.trim();
+ if(!name||!phone){toast("Enter the client's name and phone.");return}
+ const n=norm(phone), spend=Number(document.getElementById("cSpend").value||0), ref=norm(document.getElementById("cRef").value);
+ let c=clients.find(x=>norm(x.phone)===n);
+ if(!c){c={id:Date.now(),name,phone,spend:0,bonus:0,referralPoints:0,birthday:"",history:[]};clients.push(c)}
+ c.name=name;c.phone=phone;c.spend+=spend;
+ if(spend>0)c.history.push({type:"spend",amount:spend,date:new Date().toISOString()});
+ if(ref && ref!==n){
+   const r=clients.find(x=>norm(x.phone)===ref);
+   if(r){const earned=pointsForSpend(spend);r.referralPoints=(r.referralPoints||0)+(earned*2);r.history.push({type:"referral",amount:earned*2,date:new Date().toISOString(),client:name});}
+ }
+ if(document.getElementById("cRebook").value==="1"){
+   c.bonus=(c.bonus||0)+100;c.history.push({type:"rebook",amount:100,date:new Date().toISOString()});
+ }
+ c.birthday=document.getElementById("cBirthday").value||c.birthday||"";
+ save();
+ ["cName","cPhone","cSpend","cRef","cBirthday"].forEach(id=>document.getElementById(id).value="");
+ document.getElementById("cRebook").value="0";
+ toast("Client rewards updated.");
+}
+function totalPoints(c){return pointsForSpend(c.spend)+(c.bonus||0)+(c.referralPoints||0)}
+function lookupClient(){
+ const n=norm(document.getElementById("lookupPhone").value);
+ const c=clients.find(x=>norm(x.phone)===n), out=document.getElementById("lookupResult");
+ if(!c){out.innerHTML='<div class="empty">We could not find that number. Please check the number or ask the salon team.</div>';return}
+ const p=totalPoints(c), t=tierFor(p), next=t.name==="Gold"?0:(t.name==="Platinum"?1000-p:500-p);
+ out.innerHTML=`<div class="card" style="padding:22px;background:var(--soft)">
+ <div style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap"><div><div class="muted">WELCOME BACK</div><h2 style="font:32px Georgia,serif;margin:5px 0">${escapeHtml(c.name)}</h2><span class="badge ${t.cls}">${t.name} • ${t.discount}% OFF</span></div><div style="text-align:right"><div class="muted">CURRENT POINTS</div><strong style="font-size:42px">${p.toLocaleString()}</strong></div></div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+ <p><b>${t.discount}% off</b> eligible nail services at your current tier.</p>
+ ${next?`<p class="muted">Only <b>${next.toLocaleString()} points</b> to reach the next tier.</p>`:'<p class="muted"><b>You are at the highest tier.</b> Keep earning for year-end leaderboard rewards.</p>'}
+ <div class="cta"><a class="btn" href="${BOOKING_URL}" target="_blank">Book now</a></div></div>`;
+}
+function renderAdmin(){
+ const q=(document.getElementById("searchClients")?.value||"").toLowerCase();
+ const list=clients.filter(c=>(c.name+" "+c.phone).toLowerCase().includes(q));
+ document.getElementById("totalClients").textContent=clients.length;
+ document.getElementById("totalPoints").textContent=clients.reduce((a,c)=>a+totalPoints(c),0).toLocaleString();
+ document.getElementById("topSpend").textContent="KSh "+(Math.max(0,...clients.map(c=>c.spend))).toLocaleString();
+ document.getElementById("goldCount").textContent=clients.filter(c=>tierFor(totalPoints(c)).name==="Gold").length;
+ document.getElementById("clientRows").innerHTML=list.length?list.map(c=>{const t=tierFor(totalPoints(c));return `<tr><td><b>${escapeHtml(c.name)}</b></td><td>${escapeHtml(c.phone)}</td><td>KSh ${c.spend.toLocaleString()}</td><td>${totalPoints(c).toLocaleString()}</td><td><span class="badge ${t.cls}">${t.name}</span></td><td>${(c.referralPoints||0).toLocaleString()}</td><td><button class="smallbtn" onclick="deleteClient(${c.id})">Delete</button></td></tr>`}).join(""):'<tr><td colspan="7" class="empty">No clients yet.</td></tr>';
+ const ranked=[...clients].sort((a,b)=>b.spend-a.spend).slice(0,5);
+ const discounts=[50,40,30,20,10];
+ document.getElementById("leaderboard").innerHTML=ranked.length?ranked.map((c,i)=>`<div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)"><span><b>#${i+1} ${escapeHtml(c.name)}</b><span class="muted"> • KSh ${c.spend.toLocaleString()}</span></span><b>${discounts[i]}% year-end reward</b></div>`).join(""):'<div class="empty">Add clients to build the leaderboard.</div>';
+}
+function deleteClient(id){clients=clients.filter(c=>c.id!==id);save();toast("Client removed.")}
+function clearAll(){if(confirm("Delete all reward records from this browser?")){clients=[];save();toast("All records cleared.")}}
+function seedDemo(){
+ clients=[
+ {id:1,name:"Amina Wanjiku",phone:"0712345678",spend:135000,bonus:100,referralPoints:0,birthday:"",history:[]},
+ {id:2,name:"Sharon Njeri",phone:"0723456789",spend:82000,bonus:200,referralPoints:80,birthday:"",history:[]},
+ {id:3,name:"Mercy Atieno",phone:"0734567890",spend:46000,bonus:100,referralPoints:40,birthday:"",history:[]},
+ {id:4,name:"Joy Mwangi",phone:"0745678901",spend:21000,bonus:0,referralPoints:20,birthday:"",history:[]},
+ {id:5,name:"Wanjiru Kim",phone:"0756789012",spend:10000,bonus:100,referralPoints:0,birthday:"",history:[]}
+ ];save();toast("Demo clients loaded.")}
+function exportCSV(){
+ let rows=[["Name","Phone","Spend KSh","Spend Points","Bonus Points","Referral Points","Total Points","Tier"]];
+ clients.forEach(c=>{let p=totalPoints(c),t=tierFor(p);rows.push([c.name,c.phone,c.spend,pointsForSpend(c.spend),c.bonus||0,c.referralPoints||0,p,t.name])});
+ const csv=rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\\n");
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="styld-polished-rewards.csv";a.click();
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+renderAdmin();
+</script>
+</body>
+</html>
